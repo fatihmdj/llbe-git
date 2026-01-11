@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>🎵 Tambah Lagu Baru</title>
+    <title> Tambah Lagu Baru</title>
     <style>
         body {
             background: linear-gradient(135deg, #74ebd5, #acb6e5);
@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <h1>🎶 Tambah Lagu Baru</h1>
+    <h1> Tambah Lagu Baru</h1>
 
     @if($errors->any())
         <div class="alert">
@@ -70,16 +70,16 @@
 
     <form method="POST" action="{{ route('route_daftar_lagu.store') }}">
         @csrf
-        <label>🎵 Judul Lagu</label>
+        <label> Judul Lagu</label>
         <input type="text" name="judul" value="{{ old('judul') }}" required>
 
-        <label>🎤 Artist</label>
+        <label> Artist</label>
         <input type="text" name="artist" value="{{ old('artist') }}" required>
 
-        <label>💿 Album</label>
+        <label> Album</label>
         <input type="text" name="album" value="{{ old('album') }}" required>
 
-        <label>⏱️ Durasi (menit)</label>
+        <label> Durasi (menit)</label>
         <select name="durasi_menit" required>
             <option value="">-- Pilih Durasi --</option>
             @for($i = 1; $i <= 60; $i++)
@@ -89,11 +89,11 @@
             @endfor
         </select>
 
-        <label>📅 Tahun Rilis</label>
+        <label> Tahun Rilis</label>
         <input type="text" name="tahun_rilis" value="{{ old('tahun_rilis') }}" required>
 
-        <button type="submit" class="btn btn-save">💾 Simpan Lagu</button>
-        <a href="{{ route('route_daftar_lagu.index') }}" class="btn btn-cancel">↩️ Batal</a>
+        <button type="submit" class="btn btn-save"> Simpan Lagu</button>
+        <a href="{{ route('route_daftar_lagu.index') }}" class="btn btn-cancel"> Batal</a>
     </form>
 </body>
 </html>

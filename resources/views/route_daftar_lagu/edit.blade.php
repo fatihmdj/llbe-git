@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>✏️ Edit Lagu - {{ $daftarLagu->judul }}</title>
+    <title> Edit Lagu - {{ $daftarLagu->judul }}</title>
     <style>
         body {
             font-family: 'Trebuchet MS', sans-serif;
@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-    <h1>🎚️ Edit Lagu: {{ $daftarLagu->judul }}</h1>
+    <h1> Edit Lagu: {{ $daftarLagu->judul }}</h1>
 
     @if($errors->any())
         <div class="alert">
@@ -64,16 +64,16 @@
         @csrf
         @method('PUT')
 
-        <label>🎵 Judul Lagu</label>
+        <label> Judul Lagu</label>
         <input type="text" name="judul" value="{{ old('judul', $daftarLagu->judul) }}" required>
 
-        <label>🎤 Artist</label>
+        <label> Artist</label>
         <input type="text" name="artist" value="{{ old('artist', $daftarLagu->artist) }}" required>
 
-        <label>💿 Album</label>
+        <label> Album</label>
         <input type="text" name="album" value="{{ old('album', $daftarLagu->album) }}" required>
 
-        <label>⏱️ Durasi (menit)</label>
+        <label> Durasi (menit)</label>
         <select name="durasi_menit" required>
             @for($i = 1; $i <= 60; $i++)
                 <option value="{{ $i }}" {{ old('durasi_menit', $daftarLagu->durasi_menit) == $i ? 'selected' : '' }}>
@@ -82,11 +82,11 @@
             @endfor
         </select>
 
-        <label>📅 Tahun Rilis</label>
+        <label> Tahun Rilis</label>
         <input type="text" name="tahun_rilis" value="{{ old('tahun_rilis', $daftarLagu->tahun_rilis) }}" required>
 
-        <button type="submit" class="btn btn-update">💾 Update Lagu</button>
-        <a href="{{ route('route_daftar_lagu.index') }}" class="btn btn-cancel">↩️ Kembali</a>
+        <button type="submit" class="btn btn-update"> Update Lagu</button>
+        <a href="{{ route('route_daftar_lagu.index') }}" class="btn btn-cancel"> Kembali</a>
     </form>
 </body>
 </html>

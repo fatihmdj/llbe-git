@@ -74,14 +74,14 @@
     <button type="submit" class="btn btn-primary">Cari</button>
 </form>
 <body>
-    <h1>🎧 Library Lagu</h1>
+    <h1> Library Lagu</h1>
 
     <div class="container">
         @if(session('success'))
-            <div class="alert">✅ {{ session('success') }}</div>
+            <div class="alert"> {{ session('success') }}</div>
         @endif
 
-        <a href="{{ route('route_daftar_lagu.create') }}" class="btn btn-add">➕ Tambah Lagu Baru</a>
+        <a href="{{ route('route_daftar_lagu.create') }}" class="btn btn-add"> Tambah Lagu Baru</a>
 
         <table>
             <thead>
@@ -105,7 +105,7 @@
                         <td>{{ $dl->durasi_menit }}</td>
                         <td>{{ $dl->tahun_rilis }}</td>
                         <td>
-                            <a href="{{ route('route_daftar_lagu.edit', $dl->id) }}" class="btn btn-edit">✏️ Edit</a>
+                            <a href="{{ route('route_daftar_lagu.edit', $dl->id) }}" class="btn btn-edit"> Edit</a>
                             <form action="{{ route('route_daftar_lagu.destroy', $dl->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
